@@ -45,9 +45,11 @@ class Tournament(models.Model):
     description = models.TextField()
     url = models.URLField()
     host = models.CharField(max_length=50, help_text="Host of this tournament bracket")
-    # Many to Many to game class
+    # M2M to game class
     # game = models.ManyToManyField(Games)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    # M2M to BracketType class
+    # format = models.ManyToManyRel(BracketType)
 
     class Meta:
         """Meta for Tournament class."""
