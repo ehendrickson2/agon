@@ -39,7 +39,7 @@ class Event(models.Model):
 
 
 class Tournament(models.Model):
-    """Class for Tournaments, that contain one or many brackets."""
+    """Class for tournament object."""
 
     name = models.CharField(max_length=50, help_text="Name of Tournament")
     description = models.TextField()
