@@ -4,12 +4,14 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 
-from choices import STATUS_CHOICES
+from .choices import STATUS_CHOICES
 
 
 # Create your models here.
 class User(AbstractUser):
     """Class for Custom User model."""
+
+    pass
 
 
 class Game(models.Model):
@@ -115,13 +117,6 @@ class Tournament(models.Model):
         ordering = [
             "pk",
             "name",
-            "description",
-            "host",
-            "url",
-            "event",
-            "game",
-            "bracket_format",
-            "participants",
             "start_time",
         ]
 
