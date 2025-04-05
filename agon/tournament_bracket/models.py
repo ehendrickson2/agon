@@ -11,7 +11,13 @@ from .choices import STATUS_CHOICES
 class User(AbstractUser):
     """Class for Custom User model."""
 
-    pass
+    display_name = models.CharField(max_length=50, blank=True)
+    email = models.EmailField(unique=True)
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username"]
+
+    def __str__(self):
+        return self.username
 
 
 class Game(models.Model):
@@ -61,10 +67,7 @@ class Event(models.Model):
         ordering = [
             "pk",
             "name",
-            "short_description",
-            "description",
             "url",
-            "venue",
         ]
 
     # Methods

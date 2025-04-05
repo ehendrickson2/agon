@@ -28,19 +28,20 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/"
+# LOGOUT_REDIRECT_URL = "/"
+LOGIN_URL = "/login/"
 AUTH_USER_MODEL = "tournament_bracket.User"
 
 # Application definition
 
 INSTALLED_APPS = [
+    "tournament_bracket",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "tournament_bracket",
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [],
-        # "DIRS": [BASE_DIR / "templates"],
+        # "DIRS": [BASE_DIR / "tournament_bracket" / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
